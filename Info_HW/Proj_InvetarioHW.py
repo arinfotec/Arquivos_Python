@@ -16,6 +16,8 @@ import matplotlib.pyplot as plt
 
 #estatisticas coluna memoria
 df["Memória"] = df["Memória"].astype("str")             #transformando a coluna memoria em string para ceitar grafico
+qtd_mem = df["Memória"].value_counts()                  #faz estatisticas de itens iguais, conta qtd de iguais
+print(qtd_mem)
 df["Memória"].value_counts().plot.bar(title="Memória: Capacidade X Qtd.", rot=0)
 plt.ylabel('Quantidade', color="Red")                    #rotulo eixo y e a cor do texto
 plt.xlabel('Capacidade', color="Red")                    #rotulo exixo e a cor
@@ -24,6 +26,8 @@ plt.show()                                                     #mostra o grafico
 
 #estatisticas coluna Processador
 df["Processador"] = df["Processador"].astype("str")                                            #transformando a coluna memoria em string para ceitar grafico
+proc = df["Processador"].value_counts()
+print(proc)
 df["Processador"].value_counts().plot.bar(title="Processador: Tipo X Qtd.", rot=0, fontsize=9)
 plt.ylabel('Quantidade', color="Red")                                                          #rotulo eixo y e a cor do texto
 plt.xlabel('Tipo', color="Red")                                                                #rotulo exixo e a cor
@@ -31,10 +35,14 @@ plt.xlabel('Tipo', color="Red")                                                 
 plt.show()
 
 #Estatisticas Proprietarios
+prop = df["Proprietário"].value_counts()
+print(prop)
 df["Proprietário"].value_counts().plot.pie(title="Proprietários.", rot=0, fontsize=9)
 plt.show()
 
 #Estatisticas Sistema Operacional
+so = df["S.O."].value_counts()
+print(so)
 df["S.O."].value_counts().plot.pie(title="Sistemas Operacionais.", rot=0, fontsize=9)
 plt.show()
 
@@ -43,6 +51,8 @@ df["Marca"].value_counts().plot.pie(title="Marcas.", rot=0, fontsize=9)
 plt.show()
 
 #Estatisticas HD
+hd = df["HD"].value_counts()
+print(hd)
 df["HD"].value_counts().plot.pie(title="Tipo e Capacidade de HD.", rot=0, fontsize=7)
 plt.show()
 
